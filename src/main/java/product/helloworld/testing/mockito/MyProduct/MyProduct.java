@@ -8,11 +8,11 @@ public class MyProduct {
 		this.service= service;
 	}
 	
-	public int myCustomInsert(String name, String value) {
+	public int Db_TEST_Insert(String name, String value) {
 		return service.Db_TEST_Insert(name, value);
 	}
 	
-	public HashMap<Integer, String> myCustomSelect(){
+	public HashMap<Integer, String> Db_TEST_Select(){
 		return service.Db_TEST_Select();
 	}
 	
