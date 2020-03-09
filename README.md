@@ -137,7 +137,7 @@ Following dependencies are used for our project
 we have an interface named APIDataManagementInterface, which has two methods to be mocked and tested in our application. The mock object can be created in the following way.
 
 ```
-	APIDataManagementInterface dataAPI= Mockito.mock(APIDataManagementInterface.class);
+APIDataManagementInterface dataAPI= Mockito.mock(APIDataManagementInterface.class);
 ```
 
 ## Assigning some functions to the mock objects
