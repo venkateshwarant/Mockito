@@ -104,3 +104,50 @@ cd ~/<git_root_folder>/Mockito_Tutorial
 ```
 mvn test
 ```
+
+
+# Project details
+
+## Maven dependencies
+
+Following dependencies are used for our project 
+
+1. junit for writing test cases
+```
+<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+```
+
+2. Mockito for mocking our interfaces
+```
+    <dependency>
+    	<groupId>org.mockito</groupId>
+    	<artifactId>mockito-core</artifactId>
+    	<version>1.10.19</version>
+    	<scope>test</scope>
+    </dependency>
+```
+
+## Creating mock objects
+
+we have an interface named APIDataManagementInterface, which has two methods to be mocked and tested in our application. The mock object can be created in the following way.
+
+```
+	APIDataManagementInterface dataAPI= Mockito.mock(APIDataManagementInterface.class);
+```
+
+## Assigning some functions to the mock objects
+
+After creating mock objects, we should assign some mocking functionalities for it. It can be assigned as below-
+
+```
+when(dataAPI.Db_TEST_Insert("key", "value")).thenReturn(0);
+```
+
+After asssigning this mocking functionality, whenever we call the corresponding function with that exact values, it will return that corresponding mocked value.
+
+We can return any type of object from the mock object and pass any type of objects to it.
