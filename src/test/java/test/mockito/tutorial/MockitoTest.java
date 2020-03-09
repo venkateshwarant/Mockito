@@ -13,8 +13,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import product.helloworld.testing.mockito.MyProduct.APIDataManagementHandler;
+import product.helloworld.testing.mockito.MyProduct.APIDataManagementInterface;
 
-import test.mockito.tutorial.service.APIDataManagementInterface;
 
 
 
@@ -24,6 +25,8 @@ public class MockitoTest {
 
 	APIDataManagementInterface dataAPI= Mockito.mock(APIDataManagementInterface.class);
 	
+	APIDataManagementInterface dataAPI2= new APIDataManagementHandler();
+
 
 	@Before
 	public void setup() {
@@ -60,5 +63,19 @@ public class MockitoTest {
 		hashmap.put(1, "key");
 		assertEquals(hashmap, dataAPI.Db_TEST_Select());
 		verify(dataAPI).Db_TEST_Select();
+	}
+	
+	@Test
+	public void testDb_TEST_Insert_From_Service() throws IOException {
+		
+		assertEquals(0, dataAPI2.Db_TEST_Insert("key", "value"));
+//		verify(dataAPI).Db_TEST_Select();
+	}
+	
+	@Test
+	public void testDb_TEST_Select_From_Service() throws IOException {
+		
+		assertEquals("helloworld", dataAPI2.Db_TEST_Select().get(2));
+//		verify(dataAPI).Db_TEST_Select();
 	}
 }

@@ -1,4 +1,4 @@
-package test.mockito.tutorial.service;
+package product.helloworld.testing.mockito.MyProduct;
 
 import java.util.HashMap;
 
