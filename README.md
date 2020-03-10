@@ -1,5 +1,10 @@
 # Mockito Tutorial
 
+## General overview
+
+In this project, we will see how to write a mockito test for our product called "MyProduct" hereafter which uses a functionality of helloworld product. It is a integration test, and we will assert whether MyProduct is working properly, by isolation it from helloworld( mocking helloworld with the help of mockito).
+
+
 ## Assumptions/Pre-requisites
 1. Maven (v 3.6.2, or higher)
 * Instructions to install here: https://maven.apache.org/download.cgi
@@ -136,7 +141,7 @@ Following dependencies are used for our project
     	<scope>test</scope>
     </dependency>
 ```
-## Product Details
+## MyProduct Details
 
 - we have a product class named, MyProduct, which takes input of type DataBaseManagementInterface, we have implemented that interface in DataBaseManagementHandler, where we make network call to the helloworld product. 
 
@@ -150,7 +155,15 @@ Following dependencies are used for our project
 we have an interface named APIDataManagementInterface, which has two methods to be mocked and tested in our application. The mock object can be created in the following way.
 
 ```
-APIDataManagementInterface dataAPI= Mockito.mock(APIDataManagementInterface.class);
+APIDataManagementInterface mockService1= Mockito.mock(APIDataManagementInterface.class);
+```
+
+## Creating our product instance pointing to mock service
+
+Creating our product object with mock service,
+
+```
+MyProduct myProduct1= new MyProduct(mockService1);
 ```
 
 ## Assigning some functions to the mock objects
