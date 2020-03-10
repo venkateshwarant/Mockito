@@ -116,7 +116,7 @@ mvn test
 
 # Project details
 
-This project need the helloworld product to be set up beforehand and deployed. Thus it can respond to any request made to it.
+Note: This project need the helloworld product to be set up beforehand and deployed.
 
 ## Maven dependencies
 
