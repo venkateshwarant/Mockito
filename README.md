@@ -18,6 +18,9 @@
 * (only if using Windows 10 or Windows 8 Pro) Disable Hyper-V, see instructions to disable here: https://www.poweronplatforms.com/enable-disable-hyper-v-windows-10-8/
 * Check installation with the command `vagrant -v`'
 
+5. Helloworld product 
+* Instruction to setup: https://github.com/acapozucca/helloworld/tree/master/product.helloworld
+* This project needs this product to be deployed beforehand running any mockito test.
 
 ## Set local working environment
 
@@ -108,6 +111,8 @@ mvn test
 
 # Project details
 
+This project need the helloworld product to be set up beforehand and deployed. Thus it can respond to any request made to it.
+
 ## Maven dependencies
 
 Following dependencies are used for our project 
@@ -131,6 +136,14 @@ Following dependencies are used for our project
     	<scope>test</scope>
     </dependency>
 ```
+## Product Details
+
+- we have a product class named, MyProduct, which takes input of type DataBaseManagementInterface, we have implemented that interface in DataBaseManagementHandler, where we make network call to the helloworld product. 
+
+- Here, MyProduct uses Helloworld as a service. Thus for testing of MyProduct, it doesn't make any sense to test HelloWorld too. 
+
+- Therefore, in our test cases we will mock the functionality of DataBaseManagement class of Helloworld.
+
 
 ## Creating mock objects
 
@@ -151,3 +164,4 @@ when(dataAPI.Db_TEST_Insert("key", "value")).thenReturn(0);
 After asssigning this mocking functionality, whenever we call the corresponding function with that exact values, it will return that corresponding mocked value.
 
 We can return any type of object from the mock object and pass any type of objects to it.
+
