@@ -178,3 +178,21 @@ After asssigning this mocking functionality, whenever we call the corresponding 
 
 We can return any type of object from the mock object and pass any type of objects to it.
 
+## Details about test methods
+
+we have 5 test methods and 1 before test method which we will use to configure the mock object. Those 5 test methods are-
+
+1. testDb_TEST_Insert
+   In this test method, we will test the Db_TEST_Insert functionality of MyProduct which inturn uses the corresponding mocked helloworld's Db_TEST_Insert functionality.
+   
+2. testDb_TEST_Insert_Empty_key
+   This is same as above, except that we send empty key and check whether our product returns 1, which means there is some exception in our product for empty key.
+   
+3. testDb_TEST_Select
+   In this we test Db_TEST_Select functionality of MyProduct, which inturn uses the corresponding mocked helloworld's testDb_TEST_Select functionality. This returns a Hashmap, which we use to asser using junit.
+   
+4. testDb_TEST_Insert_From_Service
+   This is same as test method 1, except that instead of mocked helloworld service, we(MyProduct) directly make(s) a network call to it and get the response. We use this received response to asser using junit. This test will fail if helloworld product is down, but 1, 2, 3 does not.
+   
+5. testDb_TEST_Select_From_Service
+   This is same as test method 4, except we test Db_TEST_Select functionality of MyProduct.
