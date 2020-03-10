@@ -2,7 +2,7 @@
 
 ## General overview
 
-In this project, we will see how to write a mockito test for our product called "MyProduct" hereafter which uses a functionality of helloworld product. It is a integration test, and we will assert whether MyProduct is working properly, by isolation it from helloworld( mocking helloworld with the help of mockito).
+In this project, we will see how to write a mockito test for our product called "MyProduct" hereafter which uses a functionality of helloworld product. It is a integration test, and we will assert whether MyProduct is working properly, by isolating it from helloworld (by mocking helloworld with the help of mockito).
 
 
 ## Assumptions/Pre-requisites
