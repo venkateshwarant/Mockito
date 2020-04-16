@@ -24,7 +24,7 @@ In this project, we will see how to write a mockito test for our product called 
 * Check installation with the command `vagrant -v`'
 
 5. Helloworld product 
-* Instruction to setup: https://github.com/acapozucca/helloworld/tree/master/product.helloworld
+* Instruction to setup: https://github.com/acapozucca/helloworld
 * This project needs this product to be deployed beforehand running any mockito test.
 
 ## Set local working environment
