@@ -47,7 +47,7 @@ cd ~/<git_root_folder>/Mockito_Tutorial
 mvn clean install
 ```
 
-Running this command should shown (almost at the end of the output):
+Running this command should show (almost at the end of the output):
 
 ```
 [INFO] BUILD SUCCESS
